@@ -129,21 +129,34 @@ switch (num) {
 //     console.log('Мы уходим');
 // }
 
-const hamburger = 3;
-const fries = 3;
-const cola = 0;
-const nuggets = 2;
 
-if (hamburger === 3 && cola ===2 || fries === 3 && nuggets) {
-    console.log('Все довольны!');
-} else {
-    console.log('Мы уходим');
-}
 
-console.log(hamburger || cola || fries);
+//========================================================================
 
 
 
-let johnReport, alexReport, samReport, mariaReport = 'done';
+// const hamburger = 3;
+// const fries = 3;
+// const cola = 0;
+// const nuggets = 2;
 
-console.log(johnReport || alexReport || samReport || mariaReport);
+// if (hamburger === 3 && cola ===2 || fries === 3 && nuggets) {
+//     console.log('Все довольны!');
+// } else {
+//     console.log('Мы уходим');
+// }
+
+// console.log(hamburger === 3 && cola ===2 || fries === 3 && nuggets);
+
+
+
+// let johnReport, alexReport, samReport, mariaReport = 'done';
+
+// console.log(johnReport || alexReport || samReport || mariaReport);
+
+
+// console.log(!0);
+
+
+//========================================================================
+
