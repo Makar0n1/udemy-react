@@ -159,4 +159,126 @@ switch (num) {
 
 
 //========================================================================
+// function firstTask(){
+// for (let i = 1; i <= 20; i++){
+//     if (i % 2 === 0) {
+//         continue;
+//     }
+//     i = i + 1;
+//     console.log(i);
+// }
+// }
+// return firstTask();
+
+
+// function secondTask(){
+//     let result = 0;
+//     for (let i = 1; i <= 100; i++){
+//         result = result + i;
+//     }
+//     console.log(result);
+// }
+// return secondTask();
+
+
+// const arr = [3039, 21611, 37425, 96007, 70141, 40732, 25170, 85921, 25982, 99095, 16225, 97512, 40677, 86071, 356, 28218, 7831, 28071, 48911, 11844, 39549, 8861, 89914, 94002, 90341, 48763, 84842, 29237, 28280, 72973, 64518, 46840, 57187, 45196, 15427, 50817, 66378, 73746, 24425, 20498, 38216, 41566, 39388, 51324, 40744, 91984, 49170, 37880, 7029, 45011];
+    
+// let maxNumb = arr[0];
+
+// for (let i = 1; i <= arr.length; i++){
+//     if (arr[i] > maxNumb){
+//         maxNumb = arr[i];
+//     }
+// }
+// console.log(maxNumb);
+// function secondTask(){
+// const n = +prompt('введите высоту пирамиды', '');
+// const rootDiv = document.querySelector('.root');
+// const containerDiv = document.createElement('div');
+// containerDiv.className = 'container';
+// rootDiv.appendChild(containerDiv);
+// let j,
+//     i,
+//     pyro;
+
+// for (i = 1; i <= n; i++) {
+//     pyro = '';
+//     for (j = 1; j <= n - i; j++) {
+//         pyro += ' ';
+//     }
+//     for (j = 1; j <= (2 * i - 1); j++) {
+//         pyro += '*';
+//     }
+//     const rowDiv = document.createElement('div');
+//     rowDiv.textContent = pyro;
+//     containerDiv.appendChild(rowDiv);
+// }
+// }
+// return secondTask();
+
+
+
+
+// let n = +prompt('Введите число для поиска факториала', ''); 
+// let result = 1;
+// const rootDiv = document.querySelector('.root');
+// const headCenter = document.createElement('h1');
+// headCenter.className = 'output';
+// rootDiv.appendChild(headCenter);
+
+// for (let i = n; i > 0; i--) {
+//     result = result * i;
+// }
+
+// headCenter.textContent = `Факториал ${n} равен ${result}!`;
+
+// let str = prompt('Введите слово, которое нужно перевернуть', '');
+// let result = '';
+// const rootDiv = document.querySelector('.root');
+// const reversedOutput = document.createElement('div');
+// reversedOutput.className = 'output';
+// rootDiv.appendChild(reversedOutput);
+
+// if (typeof(str) === 'string') {
+//     console.log('все нормально!');
+// } else {
+//     console.log('Что-то не так!');
+// }
+// for (let i = str.length - 1; i >= 0; i--) {
+//     result += str[i];
+// }
+
+// reversedOutput.textContent = ` Вот ваше перевернутое слово - ${result}`;
+
+// const lines = 5;
+// let result = '';
+// // Проверяется именно переменная result, формируйте строку в ней
+// for (let i = 1; i <= lines; i++) {
+//     for (let j = 1; j <= lines - i; j++) {
+//         result += ' ';
+//     }
+//     for (let j = 1; j <= (2 * i - 1); j++) {
+//         result += '*';
+//     }
+//     result += '\n';
+// }
+// console.log(result);
+
+const data = [5, 10, 'Shopping', 20, 'Homework'];
+const result = [];
+
+    // Пишем решение вот тут
+    for (let i = data.length - 1; i >= 0; i--) {
+         result[data.length - i - 1] = data[i];
+    }
+ console.log(result);       
+        
+
+    
+
+
+
+
+
+
 
