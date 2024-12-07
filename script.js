@@ -21,7 +21,7 @@
 
 Проверить, чтобы все работало без ошибок в консоли */
 
-'use strict';
+
 
 
 
@@ -317,14 +317,14 @@ switch (num) {
 
 // Код возьмите из предыдущего домашнего задания
 
-const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
-const personalMovieDB = {
-    count:  numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+// const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+// const personalMovieDB = {
+//     count:  numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
 // if (personalMovieDB.count < 10){
 //     alert('Просмотрено довольно мало фильмов');
 // } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
@@ -377,5 +377,77 @@ const personalMovieDB = {
 
 
 // console.log(personalMovieDB);
+'use strict';
+const usdCurr = 28;
+const discount = 0.9;
 
+
+function convert(amount, curr) {
+    return curr * amount;
+}
+function promotion(result) {
+    console.log(result * discount);
+}
+const res = convert(500, usdCurr);
+promotion(res);
+
+
+function sayHello(name) {
+    return(`Hello, ${name}`);
+}
+sayHello('Anton');
+
+
+function returnNeighboringNumbers(number) {
+    console.log([number - 1, number, number + 1]);
+}
+returnNeighboringNumbers(5);
+
+
+// 3) Создайте функцию, которая будет принимать в себя 2 аргумента, оба числа. Первое число - это база, второе число - это сколько раз нужно будет повторить это число в прогрессии. (Смотри пример ниже). Функция должна возвращать строку (или число в особых случаях, о которых ниже), где эти числа идут по порядку, разделенные тремя дефисами "---". После последнего числа их не должно быть.
+// Если второй аргумент не является числом, равен или меньше нуля - то возвращать просто первый аргумент. (Проверяем через оператор typeof)
+// Примеры:
+// Вызов функции getMathResult(5, 3) даст ответ 5---10---15
+// Вызов функции getMathResult(3, 10) даст ответ 3---6---9---12---15---18---21---24---27---30
+// Вызов функции getMathResult(10, 5) даст ответ 10---20---30---40---50
+// Вызов функции getMathResult(10, '5') даст ответ 10
+// Вызов функции getMathResult(10, 0) даст ответ 10
+// Вызов функции getMathResult(20, -5) даст ответ 20
+const n = 5,
+      m = 3;
+if (typeof m != 'string' && m > 0) {
+    let result = ''
+    for (let i = n; i <= n * m; i++) {
+        if(i % n != 0){
+            continue;
+        }
+        if (i === m * n){
+            result += `${i}`;
+        } else
+        result += `${i}---`;
+    }
+    console.log(result);  
+} else {
+    console.log(n);
+}
+
+
+function getMathResult(n, m){
+    if (typeof m != 'string' && m > 0) {
+        let result = ''
+        for (let i = n; i <= n * m; i++) {
+            if(i % n != 0){
+                continue;
+            }
+            if (i === m * n){
+                result += `${i}`;
+            } else
+                result += `${i}---`;
+        }
+        return(result);
+    } else {
+        return(n);
+    }
+}
+getMathResult(5, 10);
 
