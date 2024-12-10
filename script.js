@@ -377,31 +377,31 @@ switch (num) {
 
 
 // console.log(personalMovieDB);
-'use strict';
-const usdCurr = 28;
-const discount = 0.9;
+// 'use strict';
+// const usdCurr = 28;
+// const discount = 0.9;
 
 
-function convert(amount, curr) {
-    return curr * amount;
-}
-function promotion(result) {
-    console.log(result * discount);
-}
-const res = convert(500, usdCurr);
-promotion(res);
+// function convert(amount, curr) {
+//     return curr * amount;
+// }
+// function promotion(result) {
+//     console.log(result * discount);
+// }
+// const res = convert(500, usdCurr);
+// promotion(res);
 
 
-function sayHello(name) {
-    return(`Hello, ${name}`);
-}
-sayHello('Anton');
+// function sayHello(name) {
+//     return(`Hello, ${name}`);
+// }
+// sayHello('Anton');
 
 
-function returnNeighboringNumbers(number) {
-    console.log([number - 1, number, number + 1]);
-}
-returnNeighboringNumbers(5);
+// function returnNeighboringNumbers(number) {
+//     console.log([number - 1, number, number + 1]);
+// }
+// returnNeighboringNumbers(5);
 
 
 // 3) Создайте функцию, которая будет принимать в себя 2 аргумента, оба числа. Первое число - это база, второе число - это сколько раз нужно будет повторить это число в прогрессии. (Смотри пример ниже). Функция должна возвращать строку (или число в особых случаях, о которых ниже), где эти числа идут по порядку, разделенные тремя дефисами "---". После последнего числа их не должно быть.
@@ -413,41 +413,140 @@ returnNeighboringNumbers(5);
 // Вызов функции getMathResult(10, '5') даст ответ 10
 // Вызов функции getMathResult(10, 0) даст ответ 10
 // Вызов функции getMathResult(20, -5) даст ответ 20
-const n = 5,
-      m = 3;
-if (typeof m != 'string' && m > 0) {
-    let result = ''
-    for (let i = n; i <= n * m; i++) {
-        if(i % n != 0){
-            continue;
-        }
-        if (i === m * n){
-            result += `${i}`;
-        } else
-        result += `${i}---`;
+// const n = 5,
+//       m = 3;
+// if (typeof m != 'string' && m > 0) {
+//     let result = ''
+//     for (let i = n; i <= n * m; i++) {
+//         if(i % n != 0){
+//             continue;
+//         }
+//         if (i === m * n){
+//             result += `${i}`;
+//         } else
+//         result += `${i}---`;
+//     }
+//     console.log(result);  
+// } else {
+//     console.log(n);
+// }
+
+
+// function getMathResult(n, m){
+//     if (typeof m != 'string' && m > 0) {
+//         let result = ''
+//         for (let i = n; i <= n * m; i++) {
+//             if(i % n != 0){
+//                 continue;
+//             }
+//             if (i === m * n){
+//                 result += `${i}`;
+//             } else
+//                 result += `${i}---`;
+//         }
+//         return(result);
+//     } else {
+//         return(n);
+//     }
+// }
+// getMathResult(5, 10);
+
+
+
+
+// let num = [];
+
+// for (let i = 2; i < 50; i++){
+
+//     console.log((i - 2) + (i - 1));
+    
+
+// }
+// console.log(num);
+
+
+
+/* Задание на урок:
+
+1) Первую часть задания повторить по уроку
+
+2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
+false - выводит в консоль главный объект программы
+
+3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
+"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+genres
+
+P.S. Функции вызывать не обязательно*/
+
+'use strict';
+
+// Код возьмите из предыдущего домашнего задания
+
+let numberOfFilms;
+
+function start() {
+    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
     }
-    console.log(result);  
-} else {
-    console.log(n);
+
 }
 
+start();
 
-function getMathResult(n, m){
-    if (typeof m != 'string' && m > 0) {
-        let result = ''
-        for (let i = n; i <= n * m; i++) {
-            if(i % n != 0){
-                continue;
-            }
-            if (i === m * n){
-                result += `${i}`;
-            } else
-                result += `${i}---`;
+const personalMovieDB = {
+    count:  1,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt('Один из последних просмотренных фильмов?', ''),
+              b = prompt('На сколько оцените его?', '');
+        if (a != null && a != '' && b != null && b != '' && a.length < 50) {
+            console.log('done');
+            personalMovieDB.movies[a] = b;
+        } else {
+            console.log('error');
+            i--;
         }
-        return(result);
+    }
+}
+
+rememberMyFilms();
+
+
+
+
+function detecPersonalLevel() {
+    if (personalMovieDB.count < 10){
+        alert('Просмотрено довольно мало фильмов');
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+        alert('Вы классический зритель');
+    } else if (personalMovieDB.count >= 30){
+        alert('Вы киноман');
     } else {
-        return(n);
+        alert('Произошла ошибка');
     }
 }
-getMathResult(5, 10);
+detecPersonalLevel();
 
+function wrieMyGenres() {
+    for (let i = 0; i <= 2; i++) {
+        personalMovieDB.genres[i] = prompt(`Ваш любимый жанр под номером ${i + 1}`, '');
+    }
+}
+wrieMyGenres();
+
+
+function showMyDb() {
+    if (personalMovieDB.privat !== true) {
+        console.log(personalMovieDB)
+    }
+}
+showMyDb();
